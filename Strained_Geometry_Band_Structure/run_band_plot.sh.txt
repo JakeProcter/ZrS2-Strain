@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Store absolute path to avoid navigation issues
+base_dir=$(pwd)
+
+# List of directories to process (relative to base_dir)
+directories=(
+    "+8percent" "+7percent" "+6percent" "+5percent" "+4percent" "+3percent" "+2percent" "+1percent"
+    "+0percent" "-1percent" "-2percent" "-3percent" "-4percent" "-5percent" "-6percent" "-7percent" "-8percent"
+)
+
+# Iterate through directories and run the command
+for dir in "${directories[@]}"; do
+    full_path="$base_dir/$dir"
+    
+    if [ -d "$full_path" ]; then
+        echo "Processing directory: $full_path"
+        cd "$full_path" || { echo "Failed to enter $full_path"; continue; }
+        
+        # Run the command
+        clims-aimsplot --band --total_dos --emin -5 --emax 5 --save_only
+        
+        # Return to base directory
+        cd "$base_dir" || exit
+    else
+        echo "Directory $full_path does not exist, skipping..."
+    fi
+done
+
+echo "Processing completed."
