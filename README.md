@@ -2,7 +2,8 @@
 
 This repository contains code and resources for my dissertation on tailoring ZrS₂’s electronic properties via strain engineering using DFT simulations with FHI-aims, ASE, and Python. The study explores how applied strain influences ZrS₂’s band gap and effective mass.  
 
-![Band Structure GIF](Python/Band%20Structure%20Calcs/Band%20Structure%20Plot%20Gifs/gif_3_-8_to_+8_percent.gif)
+<img src="Python/Band%20Structure%20Calcs/Band%20Structure%20Plot%20Gifs/gif_3_-8_to_+8_percent.gif" width="500"/>
+
 
 
 ## Convergence Testing  
